@@ -1,0 +1,140 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserSignup {
+  """id of the user"""
+  userId: String!
+  userName: String!
+  email: String!
+  psw: String!
+  cnfpsw: String!
+}
+
+type TodoListEntity {
+  """id of todo list"""
+  todoId: String!
+  userId: String!
+  title: String!
+  description: String!
+  checked: Boolean!
+  imgList: String!
+}
+
+type TodoImageEntity {
+  """id of todo list"""
+  todoimgId: String!
+  todoId: String!
+  userId: String!
+  url: String!
+  public_id: String!
+}
+
+type User {
+  """id of the user"""
+  userId: String!
+
+  """Example field (placeholder)"""
+  exampleField: Int!
+
+  """first name of the user"""
+  firstName: String!
+
+  """last name of the user"""
+  lastName: String!
+
+  """email of the user"""
+  email: String!
+
+  """role of the user"""
+  role: String!
+}
+
+type Query {
+  users: [User!]!
+  user(userId: String!): User!
+  checkLogin(user: String!): UserSignup!
+  todoAllList(userId: String!): TodoListEntity!
+  getImages(imgdata: String!): TodoImageEntity!
+}
+
+type Mutation {
+  createuser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(userId: String!): User!
+  createLogin(createLogin: CreateLogin!): UserSignup!
+  createSingup(createSignup: CreateSignup!): UserSignup!
+  todoList(todoListData: TodoListInput!): TodoListEntity!
+  updateTodoList(todoListData: String!): TodoListEntity!
+  deleteTodoDataById(todoId: String!): TodoListEntity!
+  insertTodoImg(todoListData: TodoImageInput!): TodoImageEntity!
+}
+
+input CreateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+
+  """first name of the user"""
+  firstName: String!
+
+  """last name of the user"""
+  lastName: String!
+
+  """email of the user"""
+  email: String!
+
+  """role of the user"""
+  role: String!
+}
+
+input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+
+  """first name of the user"""
+  firstName: String
+
+  """last name of the user"""
+  lastName: String
+
+  """email of the user"""
+  email: String
+
+  """role of the user"""
+  role: String
+  userId: String!
+}
+
+input CreateLogin {
+  """email of the user"""
+  email: String!
+
+  """psw of the user"""
+  psw: String!
+}
+
+input CreateSignup {
+  """email of the user"""
+  email: String!
+
+  """psw of the user"""
+  psw: String!
+
+  """confirm psw of the user"""
+  cnfpsw: String!
+}
+
+input TodoListInput {
+  userId: String!
+  title: String!
+  description: String!
+  checked: Boolean!
+  imgList: String!
+}
+
+input TodoImageInput {
+  todoId: String!
+  userId: String!
+  url: String!
+  public_id: String!
+}
