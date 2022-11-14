@@ -12,7 +12,12 @@ async function bootstrap() {
     optionsSuccessStatus: 204,
     credentials: true
   };
-  app.enableCors(options);
+  // app.enableCors(options);
+  app.enableCors({
+    allowedHeaders: ['content-type'],
+    origin: 'https://todo-omega-sepia.vercel.app',
+    credentials: true,
+  });
   await app.listen(3000);
 }
 bootstrap();
