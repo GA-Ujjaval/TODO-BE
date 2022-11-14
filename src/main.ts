@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({ 
-    origin: ['https://betterjavacode.com', 'https://www.google.com'],
+    origin: ['https://todo-omega-sepia.vercel.app', 'https://www.google.com'],
   });
   
   await app.listen(3000);
