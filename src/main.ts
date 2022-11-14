@@ -7,6 +7,7 @@ async function bootstrap() {
 
   app.enableCors({ 
     origin: ['https://todo-omega-sepia.vercel.app', 'https://www.google.com'],
+    credentials:true
   });
   
   await app.listen(3000);
