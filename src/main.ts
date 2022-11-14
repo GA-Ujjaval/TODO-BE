@@ -1,12 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import cors from 'cors'
+
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.enableCors();
-  app.use(cors());
+  app.enableCors({ 
+    origin: ['https://betterjavacode.com', 'https://www.google.com'],
+  });
+  
   await app.listen(3000);
 }
 bootstrap();
